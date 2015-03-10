@@ -1,7 +1,9 @@
 FixturesBundle
 ====================
 
-Symfony2 bundle for propel fixtures
+Symfony2 bundle for propel fixtures.
+Т.к. обычный таск `propel:fixtures:load` выдаёт ошибку `Attempted to call method "getPeerClassname" on class "Propel\Runtime\Map\TableMap".`, чтобы его поправить пришлось переопределить таск и файлы папки `DataFixtures/Loader`.
+Всё это вынесено в отдельный бандл <b>FixturesBundle</b>.
 
 Installation
 ------------
@@ -38,6 +40,11 @@ public function registerBundles()
     );
 }
 ```
+
+Usage
+------------
+Таск загрузки fixtures запускается командов `php app/console it-blaster:fixtures:load @AppMainBundle`, где @AppMainBundle имя бандла, где у вас лежат файлы-fixtures.
+
 
 Credits
 -------
