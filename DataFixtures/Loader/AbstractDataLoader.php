@@ -325,29 +325,4 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements Propel\
             $middle->save($this->con);
         }
     }
-
-
-    protected function loadMapBuilders($connectionName = null)
-    {
-        if (null !== $this->dbMap) {
-            return;
-        }
-
-        $this->dbMap = Propel::getDatabaseMap($connectionName);
-        if (0 === count($this->dbMap->getTables())) {
-            $finder = new Finder();
-            $files  = $finder->files()->name('*TableMap.php')
-                ->in($this->getModelSearchPaths($connectionName))
-                ->exclude('PropelBundle')
-                ->exclude('Tests');
-
-            foreach ($files as $file) {
-                $class = $this->guessFullClassName($file->getRelativePath(), basename($file, '.php'));
-                $bad_class_list = array('Propel\Runtime\Map\TableMap');
-                if (null !== $class && !in_array($class, $bad_class_list) && $this->isInDatabase($class, $connectionName)) {
-                    $this->dbMap->addTableFromMapClass($class);
-                }
-            }
-        }
-    }
 }
