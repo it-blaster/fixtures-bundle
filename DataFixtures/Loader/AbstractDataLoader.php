@@ -188,6 +188,7 @@ abstract class AbstractDataLoader extends AbstractDataHandler implements Propel\
                     }
 
                     $isARealColumn = true;
+                    $column = false;
                     if ($tableMap->hasColumn($name)) {
                         $column = $tableMap->getColumn($name);
                     } elseif ($tableMap->hasColumnByPhpName($name)) {

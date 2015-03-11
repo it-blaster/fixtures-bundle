@@ -35,8 +35,6 @@ class FixturesLoadCommand extends AbstractCommand
      */
     private $filesystem = null;
 
-//    private $bundle = null;
-
     protected $output;
 
     /**
@@ -46,11 +44,12 @@ class FixturesLoadCommand extends AbstractCommand
      */
     protected function log($message)
     {
-        //$output->writeln('<info>green color</info>');
-        //$output->writeln('<comment>yellow text</comment>');
         $this->output->writeln($message);
     }
 
+    /**
+     * Конфигурация таска
+     */
     protected function configure()
     {
         $this
@@ -112,6 +111,13 @@ EOT
         ;
     }
 
+    /**
+     * Запуск таска
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|null|void
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->output = $output;
