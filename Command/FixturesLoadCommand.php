@@ -66,9 +66,9 @@ class FixturesLoadCommand extends AbstractCommand
             ->addOption('yml', '', InputOption::VALUE_NONE, 'Load YAML fixtures')
             ->addOption('connection', null, InputOption::VALUE_OPTIONAL, 'Set this parameter to define a connection to use')
             ->setHelp(<<<EOT
-The <info>propel:fixtures:load</info> loads <info>XML</info>, <info>SQL</info> and/or <info>YAML</info> fixtures.
+The <info>it-blaster:fixtures:load</info> loads <info>XML</info>, <info>SQL</info> and/or <info>YAML</info> fixtures.
 
-  <info>php app/console propel:fixtures:load</info>
+  <info>php app/console it-blaster:fixtures:load</info>
 
 The <info>--connection</info> parameter allows you to change the connection to use.
 The default connection is the active connection (propel.dbal.default_connection).
