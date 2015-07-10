@@ -1,13 +1,5 @@
 <?php
 
-/**
- * This file is part of the PropelBundle package.
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- *
- * @license    MIT License
- */
-
 namespace ItBlaster\FixturesBundle\DataFixtures\Loader;
 
 use \Propel;
@@ -100,6 +92,7 @@ abstract class AbstractDataHandler
     protected function guessFullClassName($path, $shortClassName)
     {
         $array = array();
+        $path = str_replace('friendsofsymfony/user-bundle/', 'FOS/UserBundle/', $path);
         $path  = str_replace('/', '\\', $path);
 
         $array[] = $path;
