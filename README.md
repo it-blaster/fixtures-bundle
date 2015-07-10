@@ -43,7 +43,13 @@ public function registerBundles()
 }
 ```
 
-Usage
+
+Dump - Создание фикстур
+------------
+Таск создания fixtures запускается командой `php app/console it-blaster:fixtures:dump`. Файл с фикстурами будет создан в `app/propel/fixtures`.
+
+
+Load - Загрузка из фикстур в базу
 ------------
 Таск загрузки fixtures запускается командой `php app/console it-blaster:fixtures:load @AppMainBundle`, где @AppMainBundle имя бандла, где у вас лежат файлы-fixtures. По умолчанию файлы-fixtures будут браться из папки `app/propel/fixtures`.
 
